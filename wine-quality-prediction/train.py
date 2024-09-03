@@ -2,30 +2,22 @@ import csv
 from wine_quality_nn import SimpleNN
 
 def load_data(filepath):
-    import csv
+    """
+    Load the wine dataset from a CSV file.
 
-    data = []
+    :param filepath: Path to the CSV file containing the wine data.
+    :return: List of data rows, each containing input features followed by the target output.
+    """
     with open(filepath, 'r') as f:
-        reader = csv.reader(f, delimiter=';')  # Specify the correct delimiter
-        next(reader)  # Skip the header row
-        for row in reader:
-            data.append([float(value) for value in row])
-    
-    # Normalize data
-    max_values = [max(col) for col in zip(*data)]
-    min_values = [min(col) for col in zip(*data)]
-    normalized_data = []
-    for row in data:
-        normalized_row = [(x - min_val) / (max_val - min_val) if max_val != min_val else 0 for x, min_val, max_val in zip(row, min_values, max_values)]
-        normalized_data.append(normalized_row)
-    
-    return normalized_data
+        reader = csv.reader(f)
+        next(reader)  # Skip header
+        return list(reader)
 
 if __name__ == "__main__":
-    # Load and normalize training data
-    data = load_data('./winequality-red.csv')
+    # Load training data
+    data = load_data('winequality-red.csv')
 
-    # Initialize the neural network with 11 input features, two hidden layers with 8 and 4 neurons, and 1 output neuron
+    # Initialize the neural network with 11 input features, 5 hidden neurons, and 1 output neuron
     model = SimpleNN(input_size=11, hidden_size=5, output_size=1)
 
     # Train the model
