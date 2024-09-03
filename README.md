@@ -12,7 +12,7 @@ This repository contains a basic implementation of a simple neural network. It i
 
 The dataset used for this project is the [Wine Quality dataset](https://archive.ics.uci.edu/ml/datasets/wine+quality) from the UCI Machine Learning Repository. It contains features and target values for predicting wine quality.
 
-- **Dataset Location**: Download the dataset and place it in the root directory of the project.
+- **Dataset Location**: Download the dataset (winequality-red.csv) and place it in the root directory of the project.
 
 ## Usage
 
