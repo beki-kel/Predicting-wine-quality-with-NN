@@ -28,6 +28,8 @@ The dataset used for this project is the [Wine Quality dataset](https://archive.
      - Training the neural network
      - Making predictions
      - Evaluating performance
+3. **Google Colab**:
+      https://colab.research.google.com/drive/1kgjbPHK6Ol6uBXLyx9xwlnEPlegPFSZM#scrollTo=4PCU6voVcb8e
 
 ## Requirements
 
