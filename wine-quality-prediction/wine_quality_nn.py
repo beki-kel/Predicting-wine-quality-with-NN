@@ -81,20 +81,20 @@ class SimpleNN:
                 self.weights_input_hidden[i][j] -= learningrate * d_hidden_layer[j] * input[i]
             self.bias_hidden[j] -= learningrate * d_hidden_layer[j]
 
-    def train(self, train_data, epochs, learningrate):
+    def train(self, trainData, epochs, learningrate):
         """func. to Train the neural network for specified numbers of epochs"""
         for epoch in range(epochs):
-            total_loss = 0
-            for row in train_data:
+            totaloss = 0
+            for row in trainData:
                 input = list(map(float, row[:-1]))
                 actualOutput = float(row[-1])
                 predictedutput, hiddenLayerOutput = self.ForwardPropagation(input)
-                total_loss += (predictedutput - actualOutput) ** 2
+                totaloss += (predictedutput - actualOutput) ** 2
                 self.BacwardPropagation(input, hiddenLayerOutput, predictedutput, actualOutput, learningrate)
-            print(f'Epoch {epoch + 1}/{epochs}, Loss: {total_loss / len(train_data)}')
+            print(f'Epoch {epoch + 1}/{epochs}, Loss: {totaloss / len(trainData)}')
 
     
-    def predict(self, input, output_min, output_max):
+    def predict(self, input, outputMin, outputMax):
         """ a func. to return for the predicted output value for the given input"""
         predictedutput, _ = self.ForwardPropagation(input)
-        return predictedutput * (output_max - output_min) + output_min
+        return predictedutput * (outputMax - outputMin) + outputMin
