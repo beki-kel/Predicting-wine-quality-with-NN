@@ -1,4 +1,3 @@
-# Wine Quality Prediction
 # Predicting Wine Quality with Neural Networks
 
 This project implements a basic feedforward neural network from scratch to predict wine quality based on various chemical properties. The model is built without using libraries like NumPy or Pandas, making it a great learning tool for understanding the fundamentals of neural networks.
