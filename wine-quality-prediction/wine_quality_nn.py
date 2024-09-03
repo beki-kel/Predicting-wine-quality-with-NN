@@ -1,5 +1,4 @@
 import random
-
 class SimpleNN:
     """
     A simple feedforward neural network class to predict wine quality.
