@@ -35,9 +35,10 @@ class SimpleNN:
         else:
             return 0
 
-    """this the func. that will do the forward pass in the network. 
-    it takes the list of inupt values and retrun output value and hidden layer output"""
     def ForwardPropagation(self, inputs):
+        """this the func. that will do the forward pass in the network. 
+        it takes the list of inupt values and retrun output value and hidden layer output"""
+        
         # the calcs in the hidden layer
         hiddenlayerActivation = []
         for j in range(self.sizeofHidden):
